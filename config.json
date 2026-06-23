@@ -1,0 +1,29 @@
+{
+  "author_name": "Your Name",
+  "author_email": "YOURUSERNAME@users.noreply.github.com",
+
+  "utc_offset_hours": 3,
+
+  "max_gap_days": 3,
+  "target_active_days_min": 20,
+  "target_active_days_max": 21,
+  "commit_probability": 0.72,
+  "weekend_probability_factor": 0.55,
+
+  "min_commits_per_day": 1,
+  "max_commits_per_day": 3,
+
+  "activity_file": "activity-log.md",
+  "commit_messages": [
+    "Update activity log",
+    "Chore: routine update",
+    "Refactor notes",
+    "Update progress notes",
+    "Tidy up files",
+    "Minor update",
+    "Update documentation",
+    "Housekeeping",
+    "Polish notes",
+    "Small fixes"
+  ]
+}

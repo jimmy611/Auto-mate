@@ -1,0 +1,38 @@
+name: Daily Activity
+
+on:
+  # Runs once a day. Cron is in UTC; 08:23 UTC = 11:23 in UTC+3 (EAT).
+  # An odd minute is used on purpose - jobs scheduled on the hour are the
+  # most likely to be delayed by GitHub.
+  schedule:
+    - cron: "23 8 * * *"
+  # Lets you trigger a run by hand from the Actions tab (great for testing).
+  workflow_dispatch:
+
+# Allow the built-in token to push commits back to the repo.
+permissions:
+  contents: write
+
+# Never let two runs commit at the same time.
+concurrency:
+  group: daily-activity
+  cancel-in-progress: false
+
+jobs:
+  activity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # the bot reads past commit dates to decide
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Run activity bot
+        env:
+          AUTO_PUSH: "1"
+        run: python scripts/commit_bot.py
