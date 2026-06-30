@@ -1,6 +1,6 @@
 {
-  "author_name": "Your Name",
-  "author_email": "YOURUSERNAME@users.noreply.github.com",
+  "author_name": "Jimmy Muchathi",
+  "author_email": "95488519+jimmy611@users.noreply.github.com",
 
   "utc_offset_hours": 3,
 
@@ -10,8 +10,8 @@
   "commit_probability": 0.72,
   "weekend_probability_factor": 0.55,
 
-  "min_commits_per_day": 1,
-  "max_commits_per_day": 3,
+  "min_commits_per_day": 3,
+  "max_commits_per_day": 6,
 
   "activity_file": "activity-log.md",
   "commit_messages": [
